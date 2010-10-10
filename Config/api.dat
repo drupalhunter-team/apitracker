@@ -1,0 +1,127 @@
+# version 1.0
+
+# Config support the following factors:
+#   Library which functions inside
+#   Parameters of functions
+#   Format string used to display log.
+#   Customized struct / enum
+#   Whether the current session is allowed.
+#   Log should be displayed before or after the functions is called.
+#   Customized callback functions.
+
+# 1. the most simple.
+
+#user32.dll,		_stdcall, void*, GetDC, HWND hWnd,
+#user32.dll,		_stdcall, void*, GetWindowDC, HWND hWnd,
+
+#user32.dll,		_stdcall, BOOL,  MoveWindow, HWND hWnd, int X, int Y, int nWidth, int nHeight, BOOL bRepaint,
+
+#kernel32.dll,		_stdcall, LPSTR, lstrcatA, LPSTR lpString1, LPSTR lpString2,
+#kernel32.dll,		_stdcall, LPWSTR, lstrcatW, LPWSTR lpString1, LPWSTR lpString2,
+
+#gdi32.dll,			_stdcall, BOOL, TextOutA, HDC hdc, int nXStart, int nYStart, LPCSTR lpString, int cbString,
+#gdi32.dll,			_stdcall, BOOL, TextOutW, HDC hdc, int nXStart, int nYStart, LPCWSTR lpString, int cbString,
+
+#user32.dll,		_stdcall, int, DrawTextA, HDC hDC, LPCSTR lpString, int nCount, LPRECT lpRect, UINT uFormat, 
+#user32.dll,		_stdcall, int, DrawTextW, HDC hDC, LPCWSTR lpString, int nCount, LPRECT lpRect, UINT uFormat, 
+
+#gdi32.dll,			_stdcall, BOOL, ExtTextOutA, HDC hdc, int X, int Y, UINT fuOptions, CONST RECT* lprc, LPCSTR lpString, UINT cbCount, CONST INT* lpDx, 
+#gdi32.dll,			_stdcall, BOOL, ExtTextOutW, HDC hdc, int X, int Y, UINT fuOptions, CONST RECT* lprc, LPCWSTR lpString, UINT cbCount, CONST INT* lpDx, 
+
+#user32.dll,		_stdcall, int, DrawTextExA, HDC hdc, LPSTR lpchText, int cchText, LPRECT lprc, UINT dwDTFormat, LPDRAWTEXTPARAMS lpDTParams, 
+#user32.dll,		_stdcall, int, DrawTextExW, HDC hdc, LPWSTR lpchText, int cchText, LPRECT lprc, UINT dwDTFormat, LPDRAWTEXTPARAMS lpDTParams, 
+
+# ×¢²á±íÏà¹Ø
+
+Advapi32.dll,		_stdcall, LONG, RegOpenKeyA,  HKEY hKey, LPCSTR lpSubKey, PHKEY phkResult, 
+Advapi32.dll,		_stdcall, LONG, RegOpenKeyW,  HKEY hKey, LPCWSTR lpSubKey, PHKEY phkResult, 
+
+Advapi32.dll,		_stdcall, LONG, RegOpenKeyExA,  HKEY hKey, LPCSTR lpSubKey, DWORD ulOptions, REGSAM samDesired, PHKEY phkResult, 
+Advapi32.dll,		_stdcall, LONG, RegOpenKeyExW,  HKEY hKey, LPCWSTR lpSubKey, DWORD ulOptions, REGSAM samDesired, PHKEY phkResult, 
+
+Advapi32.dll,		_stdcall, LONG, RegCreateKeyA, HKEY hKey, LPCSTR lpSubKey, PHKEY phkResult,
+Advapi32.dll,		_stdcall, LONG, RegCreateKeyW, HKEY hKey, LPCWSTR lpSubKey, PHKEY phkResult,
+
+Advapi32.dll,		_stdcall, LONG, RegCreateKeyExA, HKEY hKey, LPCSTR lpSubKey, DWORD Reserved, LPSTR lpClass, DWORD dwOptions, REGSAM samDesired, LPSECURITY_ATTRIBUTES lpSecurityAttributes, PHKEY phkResult, LPDWORD lpdwDisposition
+Advapi32.dll,		_stdcall, LONG, RegCreateKeyExW, HKEY hKey, LPCWSTR lpSubKey, DWORD Reserved, LPWSTR lpClass, DWORD dwOptions, REGSAM samDesired, LPSECURITY_ATTRIBUTES lpSecurityAttributes, PHKEY phkResult, LPDWORD lpdwDisposition
+
+Advapi32.dll,		_stdcall, LONG, RegDeleteKeyA, HKEY hKey, LPCSTR lpSubKey, 
+Advapi32.dll,		_stdcall, LONG, RegDeleteKeyW, HKEY hKey, LPCWSTR lpSubKey, 
+
+Advapi32.dll,		_stdcall, LONG, RegDeleteKeyExA, HKEY hKey, LPCSTR lpSubKey, REGSAM samDesired, DWORD Reserved
+Advapi32.dll,		_stdcall, LONG, RegDeleteKeyExW, HKEY hKey, LPCWSTR lpSubKey, REGSAM samDesired, DWORD Reserved
+
+Advapi32.dll,		_stdcall, LONG, RegDeleteKeyValueA, HKEY hKey, LPCSTR lpSubKey, LPCSTR lpValueName
+Advapi32.dll,		_stdcall, LONG, RegDeleteKeyValueW, HKEY hKey, LPCWSTR lpSubKey, LPCWSTR lpValueName
+
+Advapi32.dll,		_stdcall, LONG, RegDeleteValueA, HKEY hKey,LPCSTR lpValueName
+Advapi32.dll,		_stdcall, LONG, RegDeleteValueW, HKEY hKey,LPCWSTR lpValueName
+
+Advapi32.dll,		_stdcall, LONG, RegEnumKeyA, HKEY hKey, DWORD dwIndex, LPSTR lpName, DWORD cchName
+Advapi32.dll,		_stdcall, LONG, RegEnumKeyW, HKEY hKey, DWORD dwIndex, LPWSTR lpName, DWORD cchName
+
+Advapi32.dll,		_stdcall, LONG, RegEnumKeyExA, HKEY hKey, DWORD dwIndex, LPSTR lpName, LPDWORD lpcName, LPDWORD lpReserved, LPSTR lpClass, LPDWORD lpcClass, PFILETIME lpftLastWriteTime
+Advapi32.dll,		_stdcall, LONG, RegEnumKeyExW, HKEY hKey, DWORD dwIndex, LPWSTR lpName, LPDWORD lpcName, LPDWORD lpReserved, LPWSTR lpClass, LPDWORD lpcClass, PFILETIME lpftLastWriteTime
+
+Advapi32.dll,		_stdcall, LONG, RegEnumValueA, HKEY hKey, DWORD dwIndex, LPSTR lpValueName, LPDWORD lpcchValueName, LPDWORD lpReserved, LPDWORD lpType, LPBYTE lpData, LPDWORD lpcbData
+Advapi32.dll,		_stdcall, LONG, RegEnumValueW, HKEY hKey, DWORD dwIndex, LPWSTR lpValueName, LPDWORD lpcchValueName, LPDWORD lpReserved, LPDWORD lpType, LPBYTE lpData, LPDWORD lpcbData
+
+Advapi32.dll,		_stdcall, LONG, RegGetValueA, HKEY hkey, LPCSTR lpSubKey, LPCSTR lpValue, DWORD dwFlags, LPDWORD pdwType, PVOID pvData, LPDWORD pcbData
+Advapi32.dll,		_stdcall, LONG, RegGetValueW, HKEY hkey, LPCWSTR lpSubKey, LPCWSTR lpValue, DWORD dwFlags, LPDWORD pdwType, PVOID pvData, LPDWORD pcbData
+
+Advapi32.dll,		_stdcall, LONG, RegNotifyChangeKeyValue, HKEY hKey, BOOL bWatchSubtree, DWORD dwNotifyFilter, HANDLE hEvent, BOOL fAsynchronous
+
+Advapi32.dll,		_stdcall, LONG, RegOpenKeyA, HKEY hKey, LPCSTR lpSubKey, PHKEY phkResult
+Advapi32.dll,		_stdcall, LONG, RegOpenKeyW, HKEY hKey, LPCWSTR lpSubKey, PHKEY phkResult
+
+Advapi32.dll,		_stdcall, LONG, RegOpenKeyExA, HKEY hKey, LPCSTR lpSubKey, DWORD ulOptions, REGSAM samDesired, PHKEY phkResult
+Advapi32.dll,		_stdcall, LONG, RegOpenKeyExW, HKEY hKey, LPCWSTR lpSubKey, DWORD ulOptions, REGSAM samDesired, PHKEY phkResult
+
+Advapi32.dll,		_stdcall, LONG, RegQueryValueA, HKEY hKey, LPCSTR lpSubKey, LPSTR lpValue, PLONG lpcbValue
+Advapi32.dll,		_stdcall, LONG, RegQueryValueW, HKEY hKey, LPCWSTR lpSubKey, LPWSTR lpValue, PLONG lpcbValue
+
+Advapi32.dll,		_stdcall, LONG, RegQueryValueExA, HKEY hKey, LPCSTR lpValueName, LPDWORD lpReserved, LPDWORD lpType, LPBYTE lpData, LPDWORD lpcbData
+Advapi32.dll,		_stdcall, LONG, RegQueryValueExW, HKEY hKey, LPCWSTR lpValueName, LPDWORD lpReserved, LPDWORD lpType, LPBYTE lpData, LPDWORD lpcbData
+
+Advapi32.dll,		_stdcall, LONG, RegRestoreKeyA, HKEY hKey, LPCSTR lpFile, DWORD dwFlags
+Advapi32.dll,		_stdcall, LONG, RegRestoreKeyW, HKEY hKey, LPCWSTR lpFile, DWORD dwFlags
+
+Advapi32.dll,		_stdcall, LONG, RegSaveKeyA, HKEY hKey, LPCSTR lpFile, LPSECURITY_ATTRIBUTES lpSecurityAttributes
+Advapi32.dll,		_stdcall, LONG, RegSaveKeyW, HKEY hKey, LPCWSTR lpFile, LPSECURITY_ATTRIBUTES lpSecurityAttributes
+
+Advapi32.dll,		_stdcall, LONG, RegSaveKeyExA, HKEY hKey, LPCSTR lpFile, LPSECURITY_ATTRIBUTES lpSecurityAttributes, DWORD Flags
+Advapi32.dll,		_stdcall, LONG, RegSaveKeyExW, HKEY hKey, LPCWSTR lpFile, LPSECURITY_ATTRIBUTES lpSecurityAttributes, DWORD Flags
+
+Advapi32.dll,		_stdcall, LONG, RegSetKeyValueA, HKEY hKey, LPCSTR lpSubKey, LPCSTR lpValueName, DWORD dwType, LPCVOID lpData, DWORD cbData
+Advapi32.dll,		_stdcall, LONG, RegSetKeyValueW, HKEY hKey, LPCWSTR lpSubKey, LPCWSTR lpValueName, DWORD dwType, LPCVOID lpData, DWORD cbData
+
+Advapi32.dll,		_stdcall, LONG, RegSetValueA, HKEY hKey, LPCSTR lpSubKey, DWORD dwType, LPCSTR lpData, DWORD cbData
+Advapi32.dll,		_stdcall, LONG, RegSetValueW, HKEY hKey, LPCWSTR lpSubKey, DWORD dwType, LPCWSTR lpData, DWORD cbData
+
+Advapi32.dll,		_stdcall, LONG, RegSetValueExA, HKEY hKey, LPCSTR lpValueName, DWORD Reserved, DWORD dwType, const BYTE* lpData, DWORD cbData
+Advapi32.dll,		_stdcall, LONG, RegSetValueExW, HKEY hKey, LPCWSTR lpValueName, DWORD Reserved, DWORD dwType, const BYTE* lpData, DWORD cbData
+
+kernel32.dll,		_stdcall, UINT, GetPrivateProfileIntA, LPCSTR lpAppName, LPCSTR lpKeyName, INT nDefault, LPCSTR lpFileName
+kernel32.dll,		_stdcall, UINT, GetPrivateProfileIntW, LPCWSTR lpAppName, LPCWSTR lpKeyName, INT nDefault, LPCWSTR lpFileName
+
+kernel32.dll,		_stdcall, DWORD, GetPrivateProfileSectionA, LPCSTR lpAppName, LPSTR lpReturnedString, DWORD nSize, LPCSTR lpFileName
+kernel32.dll,		_stdcall, DWORD, GetPrivateProfileSectionW, LPCWSTR lpAppName, LPWSTR lpReturnedString, DWORD nSize, LPCWSTR lpFileName
+
+kernel32.dll,		_stdcall, DWORD, GetPrivateProfileSectionNamesA, LPSTR lpszReturnBuffer, DWORD nSize, LPCSTR lpFileName
+kernel32.dll,		_stdcall, DWORD, GetPrivateProfileSectionNamesW, LPWSTR lpszReturnBuffer, DWORD nSize, LPCWSTR lpFileName
+
+kernel32.dll,		_stdcall, DWORD, GetPrivateProfileStringA, LPCSTR lpAppName, LPCSTR lpKeyName, LPCSTR lpDefault, LPSTR lpReturnedString, DWORD nSize, LPCSTR lpFileName
+kernel32.dll,		_stdcall, DWORD, GetPrivateProfileStringW, LPCWSTR lpAppName, LPCWSTR lpKeyName, LPCWSTR lpDefault, LPWSTR lpReturnedString, DWORD nSize, LPCWSTR lpFileName
+
+kernel32.dll,		_stdcall, DWORD, GetPrivateProfileStructA, LPCSTR lpszSection, LPCSTR lpszKey, LPVOID lpStruct, UINT uSizeStruct, LPCSTR szFile
+kernel32.dll,		_stdcall, DWORD, GetPrivateProfileStructW, LPCWSTR lpszSection, LPCWSTR lpszKey, LPVOID lpStruct, UINT uSizeStruct, LPCWSTR szFile
+
+kernel32.dll,		_stdcall, DWORD, WritePrivateProfileSectionA, LPCSTR lpAppName, LPCSTR lpString, LPCSTR lpFileName
+kernel32.dll,		_stdcall, DWORD, WritePrivateProfileSectionW, LPCWSTR lpAppName, LPCWSTR lpString, LPCWSTR lpFileName
+
+kernel32.dll,		_stdcall, DWORD, WritePrivateProfileStringA, LPCSTR lpAppName, LPCSTR lpKeyName, LPCSTR lpString, LPCSTR lpFileName
+kernel32.dll,		_stdcall, DWORD, WritePrivateProfileStringW, LPCWSTR lpAppName, LPCWSTR lpKeyName, LPCWSTR lpString, LPCWSTR lpFileName
+
+kernel32.dll,		_stdcall, DWORD, WritePrivateProfileStructA, LPCSTR lpszSection, LPCSTR lpszKey, LPVOID lpStruct, UINT uSizeStruct, LPCSTR szFile
+kernel32.dll,		_stdcall, DWORD, WritePrivateProfileStructW, LPCWSTR lpszSection, LPCWSTR lpszKey, LPVOID lpStruct, UINT uSizeStruct, LPCWSTR szFile
+

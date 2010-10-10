@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ApiHookLib", "ApiHookLib\ApiHookLib.vcproj", "{AF7D98FF-3DF9-4163-A0B3-3FB5516C292A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ApiHookTestExe", "ApiHookTestExe\ApiHookTestExe.vcproj", "{8E68469A-6FD4-4C27-8802-99A7F85E09D6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleLoggerServer", "ConsoleLoggerServer\ConsoleLoggerServer.vcproj", "{F2798BD2-AB5D-4CAE-9E9C-3B20AECEB9C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF7D98FF-3DF9-4163-A0B3-3FB5516C292A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AF7D98FF-3DF9-4163-A0B3-3FB5516C292A}.Debug|Win32.Build.0 = Debug|Win32
+		{AF7D98FF-3DF9-4163-A0B3-3FB5516C292A}.Release|Win32.ActiveCfg = Release|Win32
+		{AF7D98FF-3DF9-4163-A0B3-3FB5516C292A}.Release|Win32.Build.0 = Release|Win32
+		{8E68469A-6FD4-4C27-8802-99A7F85E09D6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8E68469A-6FD4-4C27-8802-99A7F85E09D6}.Debug|Win32.Build.0 = Debug|Win32
+		{8E68469A-6FD4-4C27-8802-99A7F85E09D6}.Release|Win32.ActiveCfg = Release|Win32
+		{8E68469A-6FD4-4C27-8802-99A7F85E09D6}.Release|Win32.Build.0 = Release|Win32
+		{F2798BD2-AB5D-4CAE-9E9C-3B20AECEB9C8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F2798BD2-AB5D-4CAE-9E9C-3B20AECEB9C8}.Debug|Win32.Build.0 = Debug|Win32
+		{F2798BD2-AB5D-4CAE-9E9C-3B20AECEB9C8}.Release|Win32.ActiveCfg = Release|Win32
+		{F2798BD2-AB5D-4CAE-9E9C-3B20AECEB9C8}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

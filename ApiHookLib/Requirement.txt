@@ -1,0 +1,11 @@
+1. Add support to LPCTSTR ( So LPCSTR / LPWSTR will not appear)
+2. Add support to sections, so we can put on / off apis in which catalogs.
+3. make it so it can traversal one .h file, to make api.dat auto.
+4. support different level logging: error, normal, warning
+5. Support the following:
+	5.1 Library the functions insides
+	5.2 functions' parameters
+	5.3 user-defined displaying format
+	5.4 user-defined struct / enum / union
+	5.5 whether need to involke the original function, and whether display parameters before the original function is invoked
+	5.6 user-defined displaying function

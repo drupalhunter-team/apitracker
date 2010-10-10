@@ -1,0 +1,1 @@
+1. why target process will exit silently, when click on MessageBox(in dll) before ResumeThread(in exe, HookProcess)
