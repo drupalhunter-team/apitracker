@@ -1,0 +1,1 @@
+You can use this project to view what functions are call by the target process, and all parameters when they are called, all logs is displayed on one console now.
